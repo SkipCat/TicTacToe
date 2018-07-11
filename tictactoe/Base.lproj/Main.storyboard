@@ -42,8 +42,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soa-0p-KnU">
-                                <rect key="frame" x="169" y="353" width="77" height="30"/>
-                                <state key="normal" title="Play Online"/>
+                                <rect key="frame" x="170" y="353" width="74" height="30"/>
+                                <state key="normal" title="Play online"/>
                                 <connections>
                                     <action selector="joinGame:" destination="ee6-ea-hVW" eventType="touchUpInside" id="ps8-HQ-Tjb"/>
                                 </connections>
@@ -122,6 +122,24 @@
                                 <rect key="frame" x="184" y="456" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t1X-EB-MWW">
+                                <rect key="frame" x="195" y="68" width="25" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iru-GI-1qr">
+                                <rect key="frame" x="195" y="583" width="25" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Swi-2U-WMK">
+                                <rect key="frame" x="195" y="621" width="25" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -129,17 +147,23 @@
                             <constraint firstItem="Anl-0o-X59" firstAttribute="top" secondItem="qLF-Qd-WX3" secondAttribute="bottom" constant="73" id="03e-Kh-5cb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="LXi-5z-LF7" secondAttribute="leading" id="0UV-Xj-Uei"/>
                             <constraint firstItem="qLF-Qd-WX3" firstAttribute="top" secondItem="RLH-o9-tFc" secondAttribute="bottom" constant="75" id="3fk-u6-ko9"/>
+                            <constraint firstItem="Swi-2U-WMK" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="4Ds-FK-gYO"/>
                             <constraint firstItem="RLH-o9-tFc" firstAttribute="leading" secondItem="1pT-us-elg" secondAttribute="trailing" constant="64" id="56X-ja-dIh"/>
+                            <constraint firstItem="Swi-2U-WMK" firstAttribute="top" secondItem="Iru-GI-1qr" secondAttribute="bottom" constant="8" id="A8F-am-cSj"/>
                             <constraint firstItem="iLD-TK-Jc4" firstAttribute="leading" secondItem="qLF-Qd-WX3" secondAttribute="trailing" constant="59" id="FUj-rx-WE6"/>
                             <constraint firstItem="iLD-TK-Jc4" firstAttribute="top" secondItem="h7N-sa-spZ" secondAttribute="bottom" constant="75" id="HsS-sZ-lnF"/>
                             <constraint firstItem="Anl-0o-X59" firstAttribute="leading" secondItem="LyH-iE-C4X" secondAttribute="trailing" constant="64" id="Hu5-b2-P22"/>
                             <constraint firstItem="qLF-Qd-WX3" firstAttribute="leading" secondItem="51e-4G-5cO" secondAttribute="trailing" constant="64" id="Nad-sn-R9A"/>
                             <constraint firstItem="TPv-Cd-5GK" firstAttribute="leading" secondItem="Anl-0o-X59" secondAttribute="trailing" constant="59" id="P32-yF-rkz"/>
                             <constraint firstItem="LXi-5z-LF7" firstAttribute="top" secondItem="EId-hC-NaP" secondAttribute="bottom" id="PKD-RC-q3s"/>
+                            <constraint firstItem="t1X-EB-MWW" firstAttribute="top" secondItem="EId-hC-NaP" secondAttribute="bottom" constant="48" id="QLJ-Ub-qIP"/>
                             <constraint firstItem="Anl-0o-X59" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="RN5-PW-elD"/>
                             <constraint firstItem="RLH-o9-tFc" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="Rfk-U3-qwR"/>
+                            <constraint firstItem="t1X-EB-MWW" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="Sai-aF-Rmp"/>
                             <constraint firstItem="qLF-Qd-WX3" firstAttribute="centerY" secondItem="6oA-h1-oaz" secondAttribute="centerY" id="TTt-de-ovH"/>
+                            <constraint firstItem="Iru-GI-1qr" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="TXA-uZ-8bC"/>
                             <constraint firstItem="h7N-sa-spZ" firstAttribute="leading" secondItem="RLH-o9-tFc" secondAttribute="trailing" constant="59" id="egL-UV-J8r"/>
+                            <constraint firstItem="wYI-IQ-dkP" firstAttribute="top" secondItem="Swi-2U-WMK" secondAttribute="bottom" constant="85" id="faf-PU-ecf"/>
                             <constraint firstItem="qLF-Qd-WX3" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="jSe-3A-7eV"/>
                             <constraint firstItem="NGh-9o-t33" firstAttribute="top" secondItem="EId-hC-NaP" secondAttribute="bottom" constant="97" id="m6p-uf-b1h"/>
                             <constraint firstItem="LyH-iE-C4X" firstAttribute="top" secondItem="51e-4G-5cO" secondAttribute="bottom" constant="73" id="nw1-34-BgW"/>
@@ -151,7 +175,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="CurrentTurn" destination="t1X-EB-MWW" id="Klz-nz-TCK"/>
                         <outlet property="GridImage" destination="NGh-9o-t33" id="csF-Gz-Kls"/>
+                        <outlet property="PlayerNameO" destination="Swi-2U-WMK" id="VUT-4x-sge"/>
+                        <outlet property="PlayerNameX" destination="Iru-GI-1qr" id="god-lx-EqX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Duq-rw-73T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -190,8 +217,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="229-e6-eOI">
-                                <rect key="frame" x="168" y="353" width="79" height="30"/>
-                                <state key="normal" title="Play Offline"/>
+                                <rect key="frame" x="169" y="353" width="76" height="30"/>
+                                <state key="normal" title="Play offline"/>
                                 <connections>
                                     <segue destination="PRa-JZ-nF2" kind="presentation" id="aeh-YX-Vk6"/>
                                 </connections>

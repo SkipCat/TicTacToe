@@ -31,6 +31,7 @@ class OfflineController: UIViewController {
     @IBAction func restartAction(_ sender: UIButton) {
         self.values = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         self.playerTurn = 1
+        // TODO: set buttons invisible by default and then display x / o image
         bt0.setTitle("Button", for: .normal)
         bt1.setTitle("Button", for: .normal)
         bt2.setTitle("Button", for: .normal)
@@ -48,8 +49,8 @@ class OfflineController: UIViewController {
     }
     
     @IBAction func handleClick(_ sender: UIButton) {
-        
         sender.setTitle(String(self.playerTurn), for: .normal)
+        sender.isEnabled = false
         self.values[sender.tag] = self.playerTurn
         
         if (
@@ -63,7 +64,6 @@ class OfflineController: UIViewController {
                 (self.values[2] != 0 && self.values[2] == self.values[4] && self.values[4] == self.values[6])
             ) {
             winnerText.text = "\(self.playerTurn) won the game"
-            
             
             if var opened:Array<Int> = defaults.array(forKey:"winHistory") as! Array<Int>?{
                 opened.append(self.playerTurn)

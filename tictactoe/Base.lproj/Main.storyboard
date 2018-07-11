@@ -82,34 +82,58 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-us-elg">
                                 <rect key="frame" x="74" y="248" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="JBg-Mk-QUx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLH-o9-tFc">
                                 <rect key="frame" x="184" y="248" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="j9h-va-2N7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-sa-spZ">
                                 <rect key="frame" x="289" y="248" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="FJc-dm-aBv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51e-4G-5cO">
                                 <rect key="frame" x="74" y="353" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="dli-vY-fkC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLF-Qd-WX3">
                                 <rect key="frame" x="184" y="353" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="tmw-dS-biU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-TK-Jc4">
                                 <rect key="frame" x="289" y="353" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="Uaq-bj-sDZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyH-iE-C4X">
                                 <rect key="frame" x="74" y="456" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="ypL-6q-bgc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPv-Cd-5GK">
                                 <rect key="frame" x="289" y="456" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="Lpb-rT-vq8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXi-5z-LF7">
                                 <rect key="frame" x="20" y="20" width="34" height="30"/>
@@ -121,25 +145,28 @@
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anl-0o-X59">
                                 <rect key="frame" x="184" y="456" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="cNS-lO-jk1"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t1X-EB-MWW">
-                                <rect key="frame" x="195" y="68" width="25" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1f-sc-vHE">
+                                <rect key="frame" x="186" y="78" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iru-GI-1qr">
-                                <rect key="frame" x="195" y="583" width="25" height="30"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kr4-go-O7g">
+                                <rect key="frame" x="186" y="587" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Swi-2U-WMK">
-                                <rect key="frame" x="195" y="621" width="25" height="30"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYC-ed-RH9">
+                                <rect key="frame" x="186" y="616" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -147,26 +174,26 @@
                             <constraint firstItem="Anl-0o-X59" firstAttribute="top" secondItem="qLF-Qd-WX3" secondAttribute="bottom" constant="73" id="03e-Kh-5cb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="LXi-5z-LF7" secondAttribute="leading" id="0UV-Xj-Uei"/>
                             <constraint firstItem="qLF-Qd-WX3" firstAttribute="top" secondItem="RLH-o9-tFc" secondAttribute="bottom" constant="75" id="3fk-u6-ko9"/>
-                            <constraint firstItem="Swi-2U-WMK" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="4Ds-FK-gYO"/>
                             <constraint firstItem="RLH-o9-tFc" firstAttribute="leading" secondItem="1pT-us-elg" secondAttribute="trailing" constant="64" id="56X-ja-dIh"/>
-                            <constraint firstItem="Swi-2U-WMK" firstAttribute="top" secondItem="Iru-GI-1qr" secondAttribute="bottom" constant="8" id="A8F-am-cSj"/>
+                            <constraint firstItem="r1f-sc-vHE" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="DqV-nr-l1M"/>
+                            <constraint firstItem="r1f-sc-vHE" firstAttribute="top" secondItem="EId-hC-NaP" secondAttribute="bottom" constant="58" id="EeA-9j-duV"/>
                             <constraint firstItem="iLD-TK-Jc4" firstAttribute="leading" secondItem="qLF-Qd-WX3" secondAttribute="trailing" constant="59" id="FUj-rx-WE6"/>
                             <constraint firstItem="iLD-TK-Jc4" firstAttribute="top" secondItem="h7N-sa-spZ" secondAttribute="bottom" constant="75" id="HsS-sZ-lnF"/>
                             <constraint firstItem="Anl-0o-X59" firstAttribute="leading" secondItem="LyH-iE-C4X" secondAttribute="trailing" constant="64" id="Hu5-b2-P22"/>
                             <constraint firstItem="qLF-Qd-WX3" firstAttribute="leading" secondItem="51e-4G-5cO" secondAttribute="trailing" constant="64" id="Nad-sn-R9A"/>
                             <constraint firstItem="TPv-Cd-5GK" firstAttribute="leading" secondItem="Anl-0o-X59" secondAttribute="trailing" constant="59" id="P32-yF-rkz"/>
                             <constraint firstItem="LXi-5z-LF7" firstAttribute="top" secondItem="EId-hC-NaP" secondAttribute="bottom" id="PKD-RC-q3s"/>
-                            <constraint firstItem="t1X-EB-MWW" firstAttribute="top" secondItem="EId-hC-NaP" secondAttribute="bottom" constant="48" id="QLJ-Ub-qIP"/>
                             <constraint firstItem="Anl-0o-X59" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="RN5-PW-elD"/>
                             <constraint firstItem="RLH-o9-tFc" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="Rfk-U3-qwR"/>
-                            <constraint firstItem="t1X-EB-MWW" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="Sai-aF-Rmp"/>
                             <constraint firstItem="qLF-Qd-WX3" firstAttribute="centerY" secondItem="6oA-h1-oaz" secondAttribute="centerY" id="TTt-de-ovH"/>
-                            <constraint firstItem="Iru-GI-1qr" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="TXA-uZ-8bC"/>
+                            <constraint firstItem="Kr4-go-O7g" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="YVP-nS-5Cz"/>
                             <constraint firstItem="h7N-sa-spZ" firstAttribute="leading" secondItem="RLH-o9-tFc" secondAttribute="trailing" constant="59" id="egL-UV-J8r"/>
-                            <constraint firstItem="wYI-IQ-dkP" firstAttribute="top" secondItem="Swi-2U-WMK" secondAttribute="bottom" constant="85" id="faf-PU-ecf"/>
+                            <constraint firstItem="ZYC-ed-RH9" firstAttribute="top" secondItem="Kr4-go-O7g" secondAttribute="bottom" constant="8" id="iG6-c6-k0d"/>
                             <constraint firstItem="qLF-Qd-WX3" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="jSe-3A-7eV"/>
                             <constraint firstItem="NGh-9o-t33" firstAttribute="top" secondItem="EId-hC-NaP" secondAttribute="bottom" constant="97" id="m6p-uf-b1h"/>
                             <constraint firstItem="LyH-iE-C4X" firstAttribute="top" secondItem="51e-4G-5cO" secondAttribute="bottom" constant="73" id="nw1-34-BgW"/>
+                            <constraint firstItem="ZYC-ed-RH9" firstAttribute="centerX" secondItem="6oA-h1-oaz" secondAttribute="centerX" id="olp-WP-nLm"/>
+                            <constraint firstItem="wYI-IQ-dkP" firstAttribute="top" secondItem="ZYC-ed-RH9" secondAttribute="bottom" constant="99" id="sCn-6B-NAq"/>
                             <constraint firstItem="51e-4G-5cO" firstAttribute="centerY" secondItem="6oA-h1-oaz" secondAttribute="centerY" id="sS3-8k-13o"/>
                             <constraint firstItem="51e-4G-5cO" firstAttribute="top" secondItem="1pT-us-elg" secondAttribute="bottom" constant="75" id="tUa-Kr-bxR"/>
                             <constraint firstItem="iLD-TK-Jc4" firstAttribute="centerY" secondItem="6oA-h1-oaz" secondAttribute="centerY" id="x9M-W0-bTK"/>
@@ -175,10 +202,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="CurrentTurn" destination="t1X-EB-MWW" id="Klz-nz-TCK"/>
+                        <outlet property="CurrentTurn" destination="r1f-sc-vHE" id="ur7-v0-onB"/>
                         <outlet property="GridImage" destination="NGh-9o-t33" id="csF-Gz-Kls"/>
-                        <outlet property="PlayerNameO" destination="Swi-2U-WMK" id="VUT-4x-sge"/>
-                        <outlet property="PlayerNameX" destination="Iru-GI-1qr" id="god-lx-EqX"/>
+                        <outlet property="PlayerNameO" destination="ZYC-ed-RH9" id="i3S-mJ-jL4"/>
+                        <outlet property="PlayerNameX" destination="Kr4-go-O7g" id="5M7-ge-7r1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Duq-rw-73T" userLabel="First Responder" sceneMemberID="firstResponder"/>

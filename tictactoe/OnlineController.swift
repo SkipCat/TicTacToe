@@ -13,6 +13,8 @@ class OnlineController: UIViewController {
     var playerO: String?
     var playerTurn: String?
     
+    let defaults: UserDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +56,7 @@ class OnlineController: UIViewController {
                     } else {
                         self.CurrentTurn.text = "Player \(self.playerO!) won!"
                     }
+                    self.addScoreToHistory()
                 } else {
                     if (self.playerTurn == "O") {
                         self.CurrentTurn.text = "It is \(self.playerX!) turn"
@@ -64,6 +67,15 @@ class OnlineController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    
+    func addScoreToHistory() {
+        if var opened: Array<String> = self.defaults.array(forKey: "onlineWinHistory") as! Array<String>? {
+            opened.append(self.playerTurn!)
+            self.defaults.set(opened, forKey: "onlineWinHistory")
+        } else {
+            self.defaults.set([self.playerTurn], forKey: "onlineWinHistory")
         }
     }
     

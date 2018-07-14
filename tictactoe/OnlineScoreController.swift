@@ -4,6 +4,10 @@ class OnlineScoreController: UIViewController {
     
     @IBOutlet weak var PlayOnlineButton: UIButton!
     @IBOutlet weak var Spinner: UIActivityIndicatorView!
+    @IBOutlet weak var PlayerXScore: UILabel!
+    @IBOutlet weak var PlayerOScore: UILabel!
+    
+    let defaults: UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,6 +15,11 @@ class OnlineScoreController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let opened: Array<String> = defaults.array(forKey: "onlineWinHistory") as! Array<String>? {
+            self.PlayerXScore.text = "Player X score = \(opened.filter{$0 == "X"}.count)"
+            self.PlayerOScore.text = "Player O score = \(opened.filter{$0 == "O"}.count)"
+        }
     }
     
     override func didReceiveMemoryWarning() {

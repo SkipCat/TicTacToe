@@ -2,9 +2,9 @@ import UIKit
 
 class OfflineScoreController: UIViewController {
     
-    @IBOutlet weak var player1: UITextField!
-    @IBOutlet weak var player2: UITextField!
-    @IBOutlet weak var draw: UITextField!
+    @IBOutlet weak var Player1Score: UILabel!
+    @IBOutlet weak var Player2Score: UILabel!
+    @IBOutlet weak var DrawScore: UILabel!
     
     let defaults: UserDefaults = UserDefaults.standard
     
@@ -15,10 +15,10 @@ class OfflineScoreController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let opened: Array<Int> = defaults.array(forKey: "winHistory") as! Array<Int>?{
-            player1.text = "Player 1 score = \(opened.filter{$0 == 1}.count)"
-            player2.text = "Player 2 score = \(opened.filter{$0 == 2}.count)"
-            draw.text = "Games drawn = \(opened.filter{$0 == 0}.count)"
+        if let opened: Array<String> = defaults.array(forKey: "offlineWinHistory") as! Array<String>? {
+            self.Player1Score.text = "Player X score = \(opened.filter{$0 == "X"}.count)"
+            self.Player2Score.text = "Player O score = \(opened.filter{$0 == "O"}.count)"
+            self.DrawScore.text = "Games drawn = \(opened.filter{$0 == ""}.count)"
         }
     }
 

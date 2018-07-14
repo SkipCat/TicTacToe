@@ -18,7 +18,7 @@ class OfflineScoreController: UIViewController {
         if let opened: Array<String> = defaults.array(forKey: "offlineWinHistory") as! Array<String>? {
             self.PlayerXScore.text = "Player X score = \(opened.filter{$0 == "X"}.count)"
             self.PlayerOScore.text = "Player O score = \(opened.filter{$0 == "O"}.count)"
-            self.DrawScore.text = "Games drawn = \(opened.filter{$0 == ""}.count)"
+            self.DrawScore.text = "Draws score = \(opened.filter{$0 == "D"}.count)"
         }
     }
 

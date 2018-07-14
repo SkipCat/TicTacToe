@@ -6,6 +6,7 @@ class OnlineScoreController: UIViewController {
     @IBOutlet weak var Spinner: UIActivityIndicatorView!
     @IBOutlet weak var PlayerXScore: UILabel!
     @IBOutlet weak var PlayerOScore: UILabel!
+    @IBOutlet weak var DrawScore: UILabel!
     
     let defaults: UserDefaults = UserDefaults.standard
     var username: String?
@@ -20,6 +21,7 @@ class OnlineScoreController: UIViewController {
         if let opened: Array<String> = defaults.array(forKey: "onlineWinHistory") as! Array<String>? {
             self.PlayerXScore.text = "Player X score = \(opened.filter{$0 == "X"}.count)"
             self.PlayerOScore.text = "Player O score = \(opened.filter{$0 == "O"}.count)"
+            self.DrawScore.text = "Draws score = \(opened.filter{$0 == "D"}.count)"
         }
     }
     
@@ -39,7 +41,7 @@ class OnlineScoreController: UIViewController {
         
         let OKAction = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
             self.username = ((alert.textFields![0]).text as String?)!
-            self.joinGame(sender)
+            self.joinGame()
         })
         OKAction.isEnabled = false
         alert.addAction(OKAction)
@@ -59,7 +61,7 @@ class OnlineScoreController: UIViewController {
         present(alert, animated: true)
     }
     
-    func joinGame(_ sender: UIButton) {
+    func joinGame() {
         TTTSocket.sharedInstance.socket.emit("join_queue", self.username!)
         self.Spinner.startAnimating()
         

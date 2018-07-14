@@ -64,19 +64,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draws: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WU-k1-kdA">
+                                <rect key="frame" x="173.66666666666666" y="594" width="67.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Soa-0p-KnU" firstAttribute="centerX" secondItem="C7v-dC-Yku" secondAttribute="centerX" id="FXj-0j-Rm1"/>
                             <constraint firstItem="i1c-Cc-5hh" firstAttribute="centerX" secondItem="C7v-dC-Yku" secondAttribute="centerX" id="dLY-mt-fRG"/>
+                            <constraint firstItem="4WU-k1-kdA" firstAttribute="centerX" secondItem="C7v-dC-Yku" secondAttribute="centerX" id="j1r-bE-oNn"/>
                             <constraint firstItem="Soa-0p-KnU" firstAttribute="centerY" secondItem="C7v-dC-Yku" secondAttribute="centerY" id="kel-fB-b4V"/>
                             <constraint firstItem="Tdd-tb-Em8" firstAttribute="top" secondItem="i1c-Cc-5hh" secondAttribute="bottom" constant="109" id="n4s-hS-GE2"/>
+                            <constraint firstItem="4WU-k1-kdA" firstAttribute="top" secondItem="i1c-Cc-5hh" secondAttribute="bottom" constant="16" id="n5w-gM-UFe"/>
                             <constraint firstItem="i1c-Cc-5hh" firstAttribute="top" secondItem="WKe-bI-iZP" secondAttribute="bottom" constant="16" id="v6N-O2-iVz"/>
                             <constraint firstItem="WKe-bI-iZP" firstAttribute="centerX" secondItem="C7v-dC-Yku" secondAttribute="centerX" id="ypT-HM-GyT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b5N-Lh-lEB"/>
                     <connections>
+                        <outlet property="DrawScore" destination="4WU-k1-kdA" id="jlR-4H-RuN"/>
                         <outlet property="PlayOnlineButton" destination="Soa-0p-KnU" id="L0i-7a-Lnd"/>
                         <outlet property="PlayerOScore" destination="i1c-Cc-5hh" id="CQ6-eT-Hqh"/>
                         <outlet property="PlayerXScore" destination="WKe-bI-iZP" id="MHn-KR-8T4"/>
@@ -226,6 +235,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Btn1" destination="1pT-us-elg" id="2yj-4W-fcK"/>
+                        <outlet property="Btn2" destination="RLH-o9-tFc" id="JZy-Yw-iL2"/>
+                        <outlet property="Btn3" destination="h7N-sa-spZ" id="20s-Oh-OJa"/>
+                        <outlet property="Btn4" destination="51e-4G-5cO" id="PB3-xt-swO"/>
+                        <outlet property="Btn5" destination="qLF-Qd-WX3" id="4DE-kG-8Xl"/>
+                        <outlet property="Btn6" destination="iLD-TK-Jc4" id="q9D-H1-p4N"/>
+                        <outlet property="Btn7" destination="LyH-iE-C4X" id="mk2-mV-eAW"/>
+                        <outlet property="Btn8" destination="Anl-0o-X59" id="BnF-RL-edP"/>
+                        <outlet property="Btn9" destination="TPv-Cd-5GK" id="zSG-ZE-iFE"/>
                         <outlet property="CurrentTurn" destination="r1f-sc-vHE" id="ur7-v0-onB"/>
                         <outlet property="GridImage" destination="NGh-9o-t33" id="csF-Gz-Kls"/>
                         <outlet property="PlayerNameO" destination="ZYC-ed-RH9" id="i3S-mJ-jL4"/>
@@ -274,20 +292,20 @@
                                     <segue destination="PRa-JZ-nF2" kind="presentation" id="aeh-YX-Vk6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games drawn: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG4-Ri-kYv">
-                                <rect key="frame" x="144.66666666666666" y="557" width="124.99999999999997" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draws: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG4-Ri-kYv">
+                                <rect key="frame" x="173.66666666666666" y="557" width="67.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2 score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lB-cp-X7h">
-                                <rect key="frame" x="143" y="520" width="128" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player O score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lB-cp-X7h">
+                                <rect key="frame" x="141.66666666666666" y="520" width="130.99999999999997" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0p-rE-biE">
-                                <rect key="frame" x="144" y="483" width="126" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player X score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0p-rE-biE">
+                                <rect key="frame" x="142.66666666666666" y="483" width="128.99999999999997" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -308,8 +326,8 @@
                     <navigationItem key="navigationItem" id="ktt-yT-PCQ"/>
                     <connections>
                         <outlet property="DrawScore" destination="uG4-Ri-kYv" id="vDf-y0-aTU"/>
-                        <outlet property="Player1Score" destination="w0p-rE-biE" id="EGu-u8-mAh"/>
-                        <outlet property="Player2Score" destination="7lB-cp-X7h" id="g7d-B0-F0s"/>
+                        <outlet property="PlayerOScore" destination="7lB-cp-X7h" id="71I-qw-Ww1"/>
+                        <outlet property="PlayerXScore" destination="w0p-rE-biE" id="bXh-fp-sR5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mf-4a-Dti" userLabel="First Responder" sceneMemberID="firstResponder"/>

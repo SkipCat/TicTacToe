@@ -23,17 +23,17 @@ class OfflineController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-        bt0.setTitleColor(UIColor.clear, for: .normal)
-        bt1.setTitleColor(UIColor.clear, for: .normal)
-        bt2.setTitleColor(UIColor.clear, for: .normal)
-        bt3.setTitleColor(UIColor.clear, for: .normal)
-        bt4.setTitleColor(UIColor.clear, for: .normal)
-        bt5.setTitleColor(UIColor.clear, for: .normal)
-        bt6.setTitleColor(UIColor.clear, for: .normal)
-        bt7.setTitleColor(UIColor.clear, for: .normal)
-        bt8.setTitleColor(UIColor.clear, for: .normal)
- */
+        self.bt0.setTitle("", for: .normal)
+        self.bt1.setTitle("", for: .normal)
+        self.bt2.setTitle("", for: .normal)
+        self.bt3.setTitle("", for: .normal)
+        self.bt4.setTitle("", for: .normal)
+        self.bt5.setTitle("", for: .normal)
+        self.bt6.setTitle("", for: .normal)
+        self.bt7.setTitle("", for: .normal)
+        self.bt8.setTitle("", for: .normal)
+        
+        self.WinnerText.text = "Player \(self.playerTurn) turn"
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,15 +44,24 @@ class OfflineController: UIViewController {
         self.values = ["", "", "", "", "", "", "", "", ""]
         self.playerTurn = "X"
         
-        bt0.setTitle("Button", for: .normal)
-        bt1.setTitle("Button", for: .normal)
-        bt2.setTitle("Button", for: .normal)
-        bt3.setTitle("Button", for: .normal)
-        bt4.setTitle("Button", for: .normal)
-        bt5.setTitle("Button", for: .normal)
-        bt6.setTitle("Button", for: .normal)
-        bt7.setTitle("Button", for: .normal)
-        bt8.setTitle("Button", for: .normal)
+        self.bt0.setTitle("", for: .normal)
+        self.bt0.isEnabled = true
+        self.bt1.setTitle("", for: .normal)
+        self.bt1.isEnabled = true
+        self.bt2.setTitle("", for: .normal)
+        self.bt2.isEnabled = true
+        self.bt3.setTitle("", for: .normal)
+        self.bt3.isEnabled = true
+        self.bt4.setTitle("", for: .normal)
+        self.bt4.isEnabled = true
+        self.bt5.setTitle("", for: .normal)
+        self.bt5.isEnabled = true
+        self.bt6.setTitle("", for: .normal)
+        self.bt6.isEnabled = true
+        self.bt7.setTitle("", for: .normal)
+        self.bt7.isEnabled = true
+        self.bt8.setTitle("", for: .normal)
+        self.bt8.isEnabled = true
         
         self.WinnerText.text = "Player \(self.playerTurn) turn"
     }
@@ -101,10 +110,10 @@ class OfflineController: UIViewController {
             self.WinnerText.text = "NO WINNER"
             
             if var opened: Array<String> = defaults.array(forKey: "offlineWinHistory") as! Array<String>? {
-                opened.append("")
+                opened.append("D")
                 defaults.set(opened, forKey: "offlineWinHistory")
             } else {
-                defaults.set([""], forKey: "offlineWinHistory")
+                defaults.set(["D"], forKey: "offlineWinHistory")
             }
             
         } else {

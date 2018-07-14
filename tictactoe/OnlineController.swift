@@ -38,7 +38,6 @@ class OnlineController: UIViewController {
     func playGame() {
         TTTSocket.sharedInstance.socket.on("movement") { data, _ in
             let castData = data[0] as! [String: Any]
-            print(castData)
             let playerPlayed = (castData["player_played"] as? String)?.uppercased()
             
             if (castData["err"] == nil) {

@@ -45,7 +45,7 @@
                                 <rect key="frame" x="170" y="353" width="74" height="30"/>
                                 <state key="normal" title="Play online"/>
                                 <connections>
-                                    <action selector="joinGame:" destination="ee6-ea-hVW" eventType="touchUpInside" id="ps8-HQ-Tjb"/>
+                                    <action selector="chooseUsername:" destination="ee6-ea-hVW" eventType="touchUpInside" id="wSI-hZ-rLu"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fwx-4B-rCG">

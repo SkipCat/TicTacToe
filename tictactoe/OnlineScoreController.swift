@@ -8,6 +8,7 @@ class OnlineScoreController: UIViewController {
     @IBOutlet weak var PlayerOScore: UILabel!
     
     let defaults: UserDefaults = UserDefaults.standard
+    var username: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +34,33 @@ class OnlineScoreController: UIViewController {
         }
     }
     
-    @IBAction func joinGame(_ sender: UIButton) {
-        TTTSocket.sharedInstance.socket.emit("join_queue", "skipcat")
+    @IBAction func chooseUsername(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Enter a username to join the game", message: "", preferredStyle: .alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            self.username = ((alert.textFields![0]).text as String?)!
+            self.joinGame(sender)
+        })
+        OKAction.isEnabled = false
+        alert.addAction(OKAction)
+        
+        alert.addTextField { (textField) in
+            NotificationCenter.default.addObserver(forName: .UITextFieldTextDidChange, object: textField, queue: OperationQueue.main, using:
+                {_ in
+                    // get the count of the non whitespace characters
+                    let textCount = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines).count ?? 0
+                    let textIsNotEmpty = textCount > 0
+                    
+                    // If the text contains non whitespace characters, enables the OK Button
+                    OKAction.isEnabled = textIsNotEmpty
+            })
+        }
+    
+        present(alert, animated: true)
+    }
+    
+    func joinGame(_ sender: UIButton) {
+        TTTSocket.sharedInstance.socket.emit("join_queue", self.username!)
         self.Spinner.startAnimating()
         
         TTTSocket.sharedInstance.socket.on("join_game") { data, _ in

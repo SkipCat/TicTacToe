@@ -17,7 +17,6 @@ class OnlineController: UIViewController {
         super.viewDidLoad()
         
         let castData = playersData[0] as! [String: Any]
-        print(castData)
         self.playerTurn = (castData["currentTurn"] as? String)?.uppercased()
         
         self.playerX = castData["playerX"] as? String
@@ -31,23 +30,38 @@ class OnlineController: UIViewController {
             self.CurrentTurn.text = "It is \(self.playerX!) turn"
         }
         
+        playGame()
+    }
+    
+    func playGame() {
         TTTSocket.sharedInstance.socket.on("movement") { data, _ in
             let castData = data[0] as! [String: Any]
+            print(castData)
             let playerPlayed = (castData["player_played"] as? String)?.uppercased()
             
             if (castData["err"] == nil) {
                 self.CurrentTurn.text = "Wrong move, please try again"
-            } else if (playerPlayed != self.playerTurn) {
-                self.CurrentTurn.text = "It is not your turn"
             } else {
-                let buttonClicked = self.view.viewWithTag((castData["index"] as? Int)!) as? UIButton
+                let tagReceived: Int = (castData["index"] as? Int)! + 1
+                let buttonClicked = self.view.viewWithTag(tagReceived) as? UIButton
+                
                 buttonClicked?.setTitle(playerPlayed!, for: .normal)
                 buttonClicked?.isEnabled = false
                 
                 if ((castData["win"] as? Int) == 1) {
-                    self.CurrentTurn.text = "Player \(playerPlayed!) won!"
+                    if (playerPlayed == "X") {
+                        self.CurrentTurn.text = "Player \(self.playerX!) won!"
+                    } else {
+                        self.CurrentTurn.text = "Player \(self.playerO!) won!"
+                    }
                 } else {
-                    self.playerTurn = (self.playerTurn == "X" ? "O" : "X")
+                    if (self.playerTurn == "O") {
+                        self.CurrentTurn.text = "It is \(self.playerX!) turn"
+                        self.playerTurn = "X"
+                    } else {
+                        self.CurrentTurn.text = "It is \(self.playerO!) turn"
+                        self.playerTurn = "O"
+                    }
                 }
             }
         }
@@ -58,7 +72,7 @@ class OnlineController: UIViewController {
     }
     
     @IBAction func handleClick(_ sender: UIButton) {
-        TTTSocket.sharedInstance.socket.emit("movement", sender.tag)
+        TTTSocket.sharedInstance.socket.emit("movement", sender.tag - 1)
     }
     
     @IBAction func dismiss(_ sender: Any) {

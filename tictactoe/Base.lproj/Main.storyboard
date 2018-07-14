@@ -48,6 +48,10 @@
                                     <action selector="joinGame:" destination="ee6-ea-hVW" eventType="touchUpInside" id="ps8-HQ-Tjb"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fwx-4B-rCG">
+                                <rect key="frame" x="197" y="408" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -57,12 +61,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="b5N-Lh-lEB"/>
                     <connections>
+                        <outlet property="PlayOnlineButton" destination="Soa-0p-KnU" id="L0i-7a-Lnd"/>
+                        <outlet property="Spinner" destination="fwx-4B-rCG" id="8Bi-ce-pLu"/>
                         <segue destination="FpB-PD-wiI" kind="presentation" identifier="onlineGame" id="2aG-V3-KeU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqa-R8-E1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="-648"/>
+            <point key="canvasLocation" x="1923.1884057971015" y="-648.09782608695662"/>
         </scene>
         <!--Online Controller-->
         <scene sceneID="EOt-ba-aO7">
@@ -79,56 +85,56 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grid.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NGh-9o-t33">
                                 <rect key="frame" x="-1068" y="117" width="2550" height="402"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-us-elg">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-us-elg">
                                 <rect key="frame" x="74" y="248" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="JBg-Mk-QUx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLH-o9-tFc">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLH-o9-tFc">
                                 <rect key="frame" x="184" y="248" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="j9h-va-2N7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-sa-spZ">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-sa-spZ">
                                 <rect key="frame" x="289" y="248" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="FJc-dm-aBv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51e-4G-5cO">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51e-4G-5cO">
                                 <rect key="frame" x="74" y="353" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="dli-vY-fkC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLF-Qd-WX3">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLF-Qd-WX3">
                                 <rect key="frame" x="184" y="353" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="tmw-dS-biU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-TK-Jc4">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-TK-Jc4">
                                 <rect key="frame" x="289" y="353" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="Uaq-bj-sDZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyH-iE-C4X">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyH-iE-C4X">
                                 <rect key="frame" x="74" y="456" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="handleClick:" destination="FpB-PD-wiI" eventType="touchUpInside" id="ypL-6q-bgc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPv-Cd-5GK">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPv-Cd-5GK">
                                 <rect key="frame" x="289" y="456" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -142,7 +148,7 @@
                                     <action selector="dismiss:" destination="FpB-PD-wiI" eventType="touchUpInside" id="smw-7i-CZk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anl-0o-X59">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anl-0o-X59">
                                 <rect key="frame" x="184" y="456" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>

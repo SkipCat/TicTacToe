@@ -1,7 +1,7 @@
 import UIKit
 import SocketIO
 
-class OnlineController: UIViewController {
+class OnlineController: DarkViewController {
     
     @IBOutlet weak var GridImage: UIImageView!
     @IBOutlet weak var CurrentTurn: UILabel!
@@ -58,47 +58,42 @@ class OnlineController: UIViewController {
     func playGame() {
         TTTSocket.sharedInstance.socket.on("movement") { data, _ in
             let castData = data[0] as! [String: Any]
-            print(castData)
             let playerPlayed = (castData["player_played"] as? String)?.uppercased()
+
+            let tagReceived: Int = (castData["index"] as? Int)! + 1
+            let buttonClicked = self.view.viewWithTag(tagReceived) as? UIButton
+        
+            buttonClicked?.setTitle(playerPlayed!, for: .normal)
+            buttonClicked?.isEnabled = false
             
-            //if (castData["err"] != nil) {
-              //  self.CurrentTurn.text = "An error occurred"
-            //} else {
-                let tagReceived: Int = (castData["index"] as? Int)! + 1
-                let buttonClicked = self.view.viewWithTag(tagReceived) as? UIButton
-            
-                buttonClicked?.setTitle(playerPlayed!, for: .normal)
-                buttonClicked?.isEnabled = false
-                
-                if ((castData["win"] as? Int) == 1) {
-                    var winner: String?
-                    if (playerPlayed == "X") {
-                        self.CurrentTurn.text = "Player \(self.playerX!) won!"
-                        winner = "Player \(self.playerX!) won!"
-                    } else {
-                        self.CurrentTurn.text = "Player \(self.playerO!) won!"
-                        winner = "Player \(self.playerO!) won!"
-                    }
-                    self.addScoreToHistory(score: self.playerTurn!)
-                    self.quitOrReplay(title: winner!)
-                    
+            if ((castData["win"] as? Int) == 1) {
+                var winner: String?
+                if (playerPlayed == "X") {
+                    self.CurrentTurn.text = "Player \(self.playerX!) won!"
+                    winner = "Player \(self.playerX!) won!"
                 } else {
-                    let grid = (castData["grid"] as? NSArray)!
-                    if (!grid.contains(0)) {
-                        self.CurrentTurn.text = "Draw!"
-                        self.addScoreToHistory(score: "D")
-                        self.quitOrReplay(title: "Draw!")
+                    self.CurrentTurn.text = "Player \(self.playerO!) won!"
+                    winner = "Player \(self.playerO!) won!"
+                }
+                self.addScoreToHistory(score: self.playerTurn!)
+                self.quitOrReplay(title: winner!)
+                
+            } else {
+                let grid = (castData["grid"] as? NSArray)!
+                if (!grid.contains(0)) {
+                    self.CurrentTurn.text = "Draw!"
+                    self.addScoreToHistory(score: "D")
+                    self.quitOrReplay(title: "Draw!")
+                } else {
+                    if (self.playerTurn == "O") {
+                        self.CurrentTurn.text = "It is \(self.playerX!) turn"
+                        self.playerTurn = "X"
                     } else {
-                        if (self.playerTurn == "O") {
-                            self.CurrentTurn.text = "It is \(self.playerX!) turn"
-                            self.playerTurn = "X"
-                        } else {
-                            self.CurrentTurn.text = "It is \(self.playerO!) turn"
-                            self.playerTurn = "O"
-                        }
+                        self.CurrentTurn.text = "It is \(self.playerO!) turn"
+                        self.playerTurn = "O"
                     }
                 }
-            //}
+            }
         }
     }
     
@@ -120,62 +115,11 @@ class OnlineController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { (action: UIAlertAction!) in
             print("you clicked on 'try again'")
-            
-            // get the username used first
-            TTTSocket.sharedInstance.socket.emit("join_queue", "skipcat")
-            TTTSocket.sharedInstance.socket.on("join_game") { data, _ in
-                print("in join_game event")
-                self.resetView()
-                self.replay()
-                /*
-                DispatchQueue.main.async { [weak self] in
-                    self?.view.setNeedsDisplay()
-                    self?.resetView()
-                }
- */
-             }
+            // TODO: restart game
+            // tried to reload page with self.viewDidLoad() and setNeededLayouts() but didn't work
         }))
         
         present(alert, animated: true)
-    }
-    
-    func resetView() {
-        self.Btn1.setTitle("Button", for: .normal)
-        self.Btn1.isEnabled = true
-        self.Btn2.setTitle("Button", for: .normal)
-        self.Btn2.isEnabled = true
-        self.Btn3.setTitle("Button", for: .normal)
-        self.Btn3.isEnabled = true
-        self.Btn4.setTitle("Button", for: .normal)
-        self.Btn4.isEnabled = true
-        self.Btn5.setTitle("Button", for: .normal)
-        self.Btn5.isEnabled = true
-        self.Btn6.setTitle("Button", for: .normal)
-        self.Btn6.isEnabled = true
-        self.Btn7.setTitle("Button", for: .normal)
-        self.Btn7.isEnabled = true
-        self.Btn8.setTitle("Button", for: .normal)
-        self.Btn8.isEnabled = true
-        self.Btn9.setTitle("Button", for: .normal)
-        self.Btn9.isEnabled = true
-    }
-    
-    func replay() {
-        let castData = playersData[0] as! [String: Any]
-        self.playerTurn = (castData["currentTurn"] as? String)?.uppercased()
-        
-        self.playerX = castData["playerX"] as? String
-        self.PlayerNameX.text = "Player X: \(self.playerX!)"
-        self.playerO = castData["playerO"] as? String
-        self.PlayerNameO.text = "Player O: \(self.playerO!)"
-        
-        if (self.playerTurn == "O") {
-            self.CurrentTurn.text = "It is \(self.playerO!) turn"
-        } else {
-            self.CurrentTurn.text = "It is \(self.playerX!) turn"
-        }
-        
-        playGame()
     }
     
     override func didReceiveMemoryWarning() {

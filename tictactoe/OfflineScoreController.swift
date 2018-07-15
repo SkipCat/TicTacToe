@@ -1,6 +1,6 @@
 import UIKit
 
-class OfflineScoreController: UIViewController {
+class OfflineScoreController: DarkViewController {
     
     @IBOutlet weak var PlayerXScore: UILabel!
     @IBOutlet weak var PlayerOScore: UILabel!

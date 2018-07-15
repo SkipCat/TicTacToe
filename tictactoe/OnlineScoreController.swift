@@ -1,6 +1,6 @@
 import UIKit
 
-class OnlineScoreController: UIViewController {
+class OnlineScoreController: DarkViewController {
     
     @IBOutlet weak var PlayOnlineButton: UIButton!
     @IBOutlet weak var Spinner: UIActivityIndicatorView!
@@ -26,7 +26,7 @@ class OnlineScoreController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         if let opened: Array<String> = defaults.array(forKey: "onlineWinHistory") as! Array<String>? {
             self.PlayerXScore.text = "Player X score = \(opened.filter{$0 == "X"}.count)"
             self.PlayerOScore.text = "Player O score = \(opened.filter{$0 == "O"}.count)"
@@ -76,6 +76,9 @@ class OnlineScoreController: UIViewController {
     
     func joinGame() {
         TTTSocket.sharedInstance.socket.emit("join_queue", self.username!)
+        
+        self.Spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        self.Spinner.color = UIColor.white
         self.Spinner.startAnimating()
         
         TTTSocket.sharedInstance.socket.on("join_game") { data, _ in

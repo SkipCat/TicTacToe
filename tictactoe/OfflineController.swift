@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class OfflineController: UIViewController {
+class OfflineController: DarkViewController {
     
     var values: Array<String> = ["", "", "", "", "", "", "", "", ""]
     var playerTurn: String = "X"
@@ -72,16 +72,11 @@ class OfflineController: UIViewController {
     
     @IBAction func handleClick(_ sender: UIButton) {
         
-        //let btnImageName = (self.playerTurn == "X" ? "cross-flat.png" : "circle-flat.png")
-        //sender.setImage(UIImage(named: btnImageName), for: .normal)
-        //sender.setBackgroundImage(UIImage(named: btnImageName), for: .normal)
-        
-        //sender.imageEdgeInsets = UIEdgeInsetsMake(25,25,25,25)
-        //sender.imageView?.contentMode = .scaleToFill
-        //sender.imageView?.semanticContentAttribute = .forceLeftToRight
-        //[sender sizeToFit];
-        //sender.titleEdgeInsets = UIEdgeInsetsMake(0, -(sender.imageView?.frame.size.width)!, 0, (sender.imageView?.frame.size.width)!);
-        //sender.imageEdgeInsets = UIEdgeInsetsMake(0, (sender.titleLabel?.frame.size.width)!, 0, -(sender.titleLabel?.frame.size.width)!);
+        // trying to set button images instead of letters but images are displaced
+        /*
+        let btnImageName = (self.playerTurn == "X" ? "cross-flat.png" : "circle-flat.png")
+        sender.setImage(UIImage(named: btnImageName), for: .normal)
+ */
         
         sender.setTitle(String(self.playerTurn), for: .normal)
         sender.isEnabled = false

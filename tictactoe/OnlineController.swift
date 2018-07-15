@@ -66,7 +66,7 @@ class OnlineController: UIViewController {
             //} else {
                 let tagReceived: Int = (castData["index"] as? Int)! + 1
                 let buttonClicked = self.view.viewWithTag(tagReceived) as? UIButton
-                
+            
                 buttonClicked?.setTitle(playerPlayed!, for: .normal)
                 buttonClicked?.isEnabled = false
                 

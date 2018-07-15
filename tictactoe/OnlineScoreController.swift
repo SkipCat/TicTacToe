@@ -13,6 +13,15 @@ class OnlineScoreController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let reachability = Reachability()
+        if (!reachability.isConnectedToNetwork()) {
+            self.PlayOnlineButton.isEnabled = false
+            
+            let alert = UIAlertController(title: "Network unavailable", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

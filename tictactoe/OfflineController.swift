@@ -74,6 +74,7 @@ class OfflineController: UIViewController {
         
         //let btnImageName = (self.playerTurn == "X" ? "cross-flat.png" : "circle-flat.png")
         //sender.setImage(UIImage(named: btnImageName), for: .normal)
+        //sender.setBackgroundImage(UIImage(named: btnImageName), for: .normal)
         
         //sender.imageEdgeInsets = UIEdgeInsetsMake(25,25,25,25)
         //sender.imageView?.contentMode = .scaleToFill

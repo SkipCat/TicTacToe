@@ -114,8 +114,7 @@ class OnlineController: UIViewController {
     func quitOrReplay(title: String) {
         let alert = UIAlertController(title: title, message: "What do you want to do now?", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Quit", style: .default, handler: { (action: UIAlertAction!) in
-            print("you clicked on 'quit'")
+        alert.addAction(UIAlertAction(title: "Quit", style: .destructive, handler: { (action: UIAlertAction!) in
             self.dismiss(sender: (Any).self)
         }))
         

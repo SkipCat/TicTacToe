@@ -39,6 +39,10 @@ class OnlineScoreController: UIViewController {
     @IBAction func chooseUsername(_ sender: UIButton) {
         let alert = UIAlertController(title: "Enter a username to join the game", message: "", preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            alert.dismiss(animated: true)
+        }))
+        
         let OKAction = UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
             self.username = ((alert.textFields![0]).text as String?)!
             self.joinGame()
